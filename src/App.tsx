@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
+import Header from './components/Header';
 import InputField from './components/InputField';
 
 interface Todo {
@@ -17,7 +18,9 @@ const App = () => {
 
   return (
     <div className='App'>
-      <InputField addTodos={addTodos} />
+      <Header />
+      dsfj
+      {/* <InputField addTodos={addTodos} /> */}
     </div>
   );
 };

@@ -1,0 +1,22 @@
+.headerImg {
+  width: 100vw;
+  height: 200px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.headerImg--light {
+  background-image: url('../../images/bg-mobile-light.jpg');
+}
+.headerImg--black {
+  background-image: url('../../images/bg-mobile-dark.jpg');
+}
+
+@media (min-width: 375px) {
+  .headerImg--light {
+    background-image: url('../../images/bg-desktop-light.jpg');
+  }
+  .headerImg--black {
+    background-image: url('../../images/bg-desktop-dark.jpg');
+  }
+}
