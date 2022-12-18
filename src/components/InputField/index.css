@@ -1,0 +1,26 @@
+.form {
+  display: flex;
+  width: 80%;
+  align-items: center;
+  margin: 0 auto;
+  border-radius: 5px;
+  border: 1px solid #e3e4f1;
+  height: 64px;
+}
+.form__input {
+  color: #9495a5;
+  border: none;
+}
+.form__input::placeholder {
+  color: #9495a5;
+}
+.form__input:focus {
+  outline: none;
+}
+.form__circle {
+  width: 26px;
+  height: 26px;
+  border-radius: 50px;
+  border: 1px solid #e3e4f1;
+  margin: 10px;
+}

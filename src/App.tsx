@@ -1,8 +1,13 @@
 import React from 'react';
 import './App.css';
+import InputField from './components/InputField';
 
 const App = () => {
-  return <div className='App'>Hello</div>;
+  return (
+    <div className='App'>
+      <InputField />
+    </div>
+  );
 };
 
 //interface, type extends
