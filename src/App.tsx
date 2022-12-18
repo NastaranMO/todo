@@ -1,11 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import InputField from './components/InputField';
 
+interface Todo {
+  id: number;
+  name: string;
+  isDone: boolean;
+}
+
 const App = () => {
+  const [todos, setTodos] = useState<Todo[]>([]);
+
+  const addTodos = (todo: string): void => {
+    setTodos((prev) => [...prev, { id: 1, name: todo, isDone: false }]);
+  };
+
   return (
     <div className='App'>
-      <InputField />
+      <InputField addTodos={addTodos} />
     </div>
   );
 };
