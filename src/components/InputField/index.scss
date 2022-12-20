@@ -1,26 +1,46 @@
-// .form {
-//   display: flex;
-//   width: 85%;
-//   align-items: center;
-//   margin: 0 auto;
-//   border-radius: 5px;
-//   border: 1px solid #e3e4f1;
-//   height: 48px;
-// }
-// .form__input {
-//   color: #9495a5;
-//   border: none;
-// }
-// .form__input::placeholder {
-//   color: #9495a5;
-// }
-// .form__input:focus {
-//   outline: none;
-// }
-// .form__circle {
-//   width: 26px;
-//   height: 26px;
-//   border-radius: 50px;
-//   border: 1px solid #e3e4f1;
-//   margin: 10px;
-// }
+@import '../../colors.scss';
+.form {
+  width: 90%;
+  padding-left: 6%;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
+  height: 3em;
+  @media (min-width: 1400px) {
+    padding-left: 4%;
+    height: 4em;
+  }
+
+  input {
+    width: 90%;
+    border: none;
+    // background-color: red;
+    @media (min-width: 800px) {
+      width: 92%;
+    }
+  }
+
+  input::placeholder {
+    color: $dark-grayish-blue;
+  }
+
+  input:focus {
+    outline: none;
+  }
+
+  div {
+    width: 10%;
+    // background-color: green;
+    @media (min-width: 800px) {
+      width: 5%;
+    }
+    .circle {
+      border: 1px solid $light-grayish-blue;
+      border-radius: 50px;
+      width: 1.2em;
+      height: 1.2em;
+    }
+  }
+}
