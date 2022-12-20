@@ -5,12 +5,15 @@
   }
 }
 
+@import '../../colors.scss';
+
 .headerImg {
   width: 100vw;
   height: 200px;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+  color: $light-grey;
   @media (min-width: 375px) {
     height: 300px;
   }
