@@ -1,3 +1,10 @@
+@mixin backgroundImg($mobileImg, $desktopImg) {
+  background-image: url($mobileImg);
+  @media (min-width: 375px) {
+    background-image: url($desktopImg);
+  }
+}
+
 .headerImg {
   width: 100vw;
   height: 200px;
@@ -9,16 +16,14 @@
   }
 }
 .headerImg--light {
-  background-image: url('../../images/bg-mobile-light.jpg');
-  @media (min-width: 375px) {
-    background-image: url('../../images/bg-desktop-light.jpg');
-  }
+  @include backgroundImg(
+    '../../images/bg-mobile-light.jpg',
+    '../../images/bg-desktop-light.jpg'
+  );
 }
 .headerImg--black {
-  background-image: url('../../images/bg-mobile-dark.jpg');
-  @media (min-width: 375px) {
-    .headerImg--black {
-      background-image: url('../../images/bg-desktop-dark.jpg');
-    }
-  }
+  @include backgroundImg(
+    '../../images/bg-mobile-dark.jpg',
+    '../../images/bg-desktop-dark.jpg'
+  );
 }
