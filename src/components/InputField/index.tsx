@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './index.css';
+import './index.scss';
 interface Todo {
   id: number;
   name: string;
@@ -23,7 +23,7 @@ const Index = ({ addTodos }: Props) => {
     <form className='form' onSubmit={submitHandler}>
       <div className='form__circle'></div>
       <input
-        className='form__input'
+        // className='form__input'
         value={todo}
         onChange={(e) => setTodo(e.target.value)}
         placeholder='Create a new todo...'

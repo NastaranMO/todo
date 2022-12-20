@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './App.css';
+import './App.scss';
 import Header from './components/Header';
 import InputField from './components/InputField';
 
@@ -17,9 +17,11 @@ const App = () => {
   };
 
   return (
-    <div className='App'>
+    <div>
       <Header />
-      {/* <InputField addTodos={addTodos} /> */}
+      <main className='todo'>
+        <InputField addTodos={addTodos} />
+      </main>
     </div>
   );
 };
