@@ -1,32 +1,32 @@
-@mixin backgroundImg($mobileImg, $desktopImg) {
-  background-image: url($mobileImg);
-  @media (min-width: 375px) {
-    background-image: url($desktopImg);
-  }
-}
-
 @import '../../colors.scss';
 
-.headerImg {
+@mixin header($mobileImg, $desktopImg) {
   width: 100vw;
   height: 200px;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  color: $light-grey;
+  background-image: url($mobileImg);
   @media (min-width: 375px) {
     height: 300px;
+    background-image: url($desktopImg);
   }
 }
-.headerImg--light {
-  @include backgroundImg(
-    '../../images/bg-mobile-light.jpg',
-    '../../images/bg-desktop-light.jpg'
-  );
+
+.light {
+  .headerImg {
+    @include header(
+      '../../images/bg-mobile-light.jpg',
+      '../../images/bg-desktop-light.jpg'
+    );
+  }
 }
-.headerImg--black {
-  @include backgroundImg(
-    '../../images/bg-mobile-dark.jpg',
-    '../../images/bg-desktop-dark.jpg'
-  );
+
+.dark {
+  .headerImg {
+    @include header(
+      '../../images/bg-mobile-dark.jpg',
+      '../../images/bg-desktop-dark.jpg'
+    );
+  }
 }

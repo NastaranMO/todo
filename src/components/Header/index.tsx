@@ -3,10 +3,10 @@ import './index.scss';
 
 const Index = () => {
   return (
-    <>
-      <div className='headerImg headerImg--light'></div>
+    <div className='light'>
+      <div className='headerImg'></div>
       <h1>Todo</h1>
-    </>
+    </div>
   );
 };
 
