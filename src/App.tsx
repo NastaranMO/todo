@@ -28,6 +28,11 @@ const App = () => {
       <Header />
       <main className='todo'>
         <InputField addTodos={addTodos} />
+        <ul>
+          {todos.map((todo) => (
+            <li>{todo.name}</li>
+          ))}
+        </ul>
       </main>
     </div>
   );

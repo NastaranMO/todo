@@ -19,6 +19,7 @@ main {
 }
 
 .todo {
+  background-color: red;
   position: fixed;
   top: 7rem;
   width: 90vw;
@@ -34,6 +35,5 @@ main {
   @media (min-width: 1400px) {
     width: 50vw;
     margin-inline: 25vw;
-    height: 64px;
   }
 }

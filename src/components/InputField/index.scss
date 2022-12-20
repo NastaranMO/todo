@@ -1,14 +1,14 @@
 @import '../../colors.scss';
 .form {
-  width: 90%;
+  width: 94%;
   padding-left: 6%;
   background-color: white;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   border-radius: 5px;
   height: 3em;
   @media (min-width: 1400px) {
+    width: 96%;
     padding-left: 4%;
     height: 4em;
   }
