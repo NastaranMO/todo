@@ -4,19 +4,21 @@
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+  @media (min-width: 375px) {
+    height: 300px;
+  }
 }
 .headerImg--light {
   background-image: url('../../images/bg-mobile-light.jpg');
+  @media (min-width: 375px) {
+    background-image: url('../../images/bg-desktop-light.jpg');
+  }
 }
 .headerImg--black {
   background-image: url('../../images/bg-mobile-dark.jpg');
-}
-
-@media (min-width: 375px) {
-  .headerImg--light {
-    background-image: url('../../images/bg-desktop-light.jpg');
-  }
-  .headerImg--black {
-    background-image: url('../../images/bg-desktop-dark.jpg');
+  @media (min-width: 375px) {
+    .headerImg--black {
+      background-image: url('../../images/bg-desktop-dark.jpg');
+    }
   }
 }
