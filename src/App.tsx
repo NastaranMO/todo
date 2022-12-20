@@ -2,18 +2,25 @@ import React, { useState } from 'react';
 import './App.scss';
 import Header from './components/Header';
 import InputField from './components/InputField';
-
+import { v4 as uuid } from 'uuid';
 interface Todo {
-  id: number;
+  id: string;
   name: string;
   isDone: boolean;
 }
+
+const createTodo = (todo: string): Todo => ({
+  id: uuid(),
+  name: todo,
+  isDone: false,
+});
 
 const App = () => {
   const [todos, setTodos] = useState<Todo[]>([]);
 
   const addTodos = (todo: string): void => {
-    setTodos((prev) => [...prev, { id: 1, name: todo, isDone: false }]);
+    const newTodo: Todo = createTodo(todo);
+    setTodos((prev) => [...prev, newTodo]);
   };
 
   return (
