@@ -1,24 +1,20 @@
 @import '../../colors.scss';
 .form {
-  width: 94%;
-  padding-left: 6%;
+  width: 100%;
   background-color: white;
   display: flex;
   align-items: center;
   border-radius: 5px;
   height: 3em;
   @media (min-width: 1400px) {
-    width: 96%;
-    padding-left: 4%;
     height: 4em;
   }
 
   input {
-    width: 90%;
+    max-width: 90%;
     border: none;
     // background-color: red;
     @media (min-width: 800px) {
-      width: 92%;
     }
   }
 
@@ -31,16 +27,15 @@
   }
 
   div {
-    width: 10%;
+    width: max-content;
+    margin-left: 0.7em;
     // background-color: green;
-    @media (min-width: 800px) {
-      width: 5%;
-    }
     .circle {
       border: 1px solid $light-grayish-blue;
       border-radius: 50px;
       width: 1.2em;
       height: 1.2em;
+      margin-right: 1em;
     }
   }
 }
