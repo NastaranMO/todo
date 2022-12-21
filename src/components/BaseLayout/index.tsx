@@ -3,6 +3,7 @@ import './index.scss';
 import Header from '../Header';
 import { ThemeContext } from '../../App';
 import InputField from '../InputField';
+import Cards from '../Cards';
 import { v4 as uuid } from 'uuid';
 
 interface Todo {
@@ -19,7 +20,6 @@ const createTodo = (todo: string): Todo => ({
 
 const Index = () => {
   const theme = useContext(ThemeContext);
-
   const [todos, setTodos] = useState<Todo[]>([]);
 
   const addTodos = (todo: string): void => {
@@ -32,11 +32,7 @@ const Index = () => {
       <Header />
       <main className='todo'>
         <InputField addTodos={addTodos} />
-        <ul>
-          {todos.map((todo) => (
-            <li>{todo.name}</li>
-          ))}
-        </ul>
+        <Cards todos={todos} />
       </main>
     </div>
   );

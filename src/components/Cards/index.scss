@@ -1,0 +1,15 @@
+@import '../../colors.scss';
+
+.light .list {
+  background-color: white;
+}
+.dark .list {
+  background-color: $deep-dark-desaturated-blue;
+}
+
+.list {
+  list-style: none;
+  border-radius: 5px;
+  padding: 0;
+  width: 100%;
+}
