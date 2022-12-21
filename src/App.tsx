@@ -17,7 +17,7 @@ const createTodo = (todo: string): Todo => ({
 
 const App = () => {
   const [todos, setTodos] = useState<Todo[]>([]);
-  let theme = 'light';
+  let theme = 'dark';
 
   const addTodos = (todo: string): void => {
     const newTodo: Todo = createTodo(todo);

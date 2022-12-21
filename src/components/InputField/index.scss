@@ -1,6 +1,17 @@
 @import '../../colors.scss';
 .light .form {
   background-color: white;
+
+  div.circle {
+    border: 1px solid $deep-light-grayish-blue;
+  }
+}
+
+.dark .form {
+  background-color: $deep-dark-desaturated-blue;
+  div.circle {
+    border: 1px solid $deep-dark-grayish-blue;
+  }
 }
 
 .form {
@@ -16,7 +27,7 @@
   input {
     max-width: 90%;
     border: none;
-    // background-color: red;
+    background-color: inherit;
     @media (min-width: 800px) {
     }
   }
@@ -34,7 +45,7 @@
     margin-left: 0.7em;
     // background-color: green;
     .circle {
-      border: 1px solid $light-grayish-blue;
+      // border: 1px solid $deep-light-grayish-blue;
       border-radius: 50px;
       width: 1.2em;
       height: 1.2em;
