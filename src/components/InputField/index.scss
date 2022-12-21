@@ -1,7 +1,10 @@
 @import '../../colors.scss';
+.light .form {
+  background-color: white;
+}
+
 .form {
   width: 100%;
-  background-color: white;
   display: flex;
   align-items: center;
   border-radius: 5px;

@@ -17,6 +17,7 @@ const createTodo = (todo: string): Todo => ({
 
 const App = () => {
   const [todos, setTodos] = useState<Todo[]>([]);
+  let theme = 'light';
 
   const addTodos = (todo: string): void => {
     const newTodo: Todo = createTodo(todo);
@@ -24,7 +25,7 @@ const App = () => {
   };
 
   return (
-    <div>
+    <div className={theme}>
       <Header />
       <main className='todo'>
         <InputField addTodos={addTodos} />
