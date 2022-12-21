@@ -1,45 +1,15 @@
-import React, { useContext, useState, createContext } from 'react';
+import React, { useState, createContext } from 'react';
 import './App.scss';
-import Header from './components/Header';
-import InputField from './components/InputField';
-import { v4 as uuid } from 'uuid';
+import BaseLayout from './components/BaseLayout';
 
-const ThemeContext = createContext('light');
-interface Todo {
-  id: string;
-  name: string;
-  isDone: boolean;
-}
-
-const createTodo = (todo: string): Todo => ({
-  id: uuid(),
-  name: todo,
-  isDone: false,
-});
+const ThemeContext = createContext('');
 
 const App = () => {
-  const [todos, setTodos] = useState<Todo[]>([]);
   const [theme, setTheme] = useState('light');
-  // let theme = 'dark';
-
-  const addTodos = (todo: string): void => {
-    const newTodo: Todo = createTodo(todo);
-    setTodos((prev) => [...prev, newTodo]);
-  };
 
   return (
     <ThemeContext.Provider value={theme}>
-      <div className={theme}>
-        <Header />
-        <main className='todo'>
-          <InputField addTodos={addTodos} />
-          <ul>
-            {todos.map((todo) => (
-              <li>{todo.name}</li>
-            ))}
-          </ul>
-        </main>
-      </div>
+      <BaseLayout />
     </ThemeContext.Provider>
   );
 };
