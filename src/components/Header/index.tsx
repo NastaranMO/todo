@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { ThemeContext } from '../../App';
 import './index.scss';
 import sun from '../../images/icon-sun.svg';
 import moon from '../../images/icon-moon.svg';
 
 const Index = () => {
-  let theme = 'light';
+  const theme = useContext(ThemeContext);
   const imgAlt = theme === 'light' ? 'moon' : 'sun';
   return (
     <header className='header'>

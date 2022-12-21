@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useContext, useState, createContext } from 'react';
 import './App.scss';
 import Header from './components/Header';
 import InputField from './components/InputField';
 import { v4 as uuid } from 'uuid';
+
+const ThemeContext = createContext('light');
 interface Todo {
   id: string;
   name: string;
@@ -17,7 +19,8 @@ const createTodo = (todo: string): Todo => ({
 
 const App = () => {
   const [todos, setTodos] = useState<Todo[]>([]);
-  let theme = 'dark';
+  const [theme, setTheme] = useState('light');
+  // let theme = 'dark';
 
   const addTodos = (todo: string): void => {
     const newTodo: Todo = createTodo(todo);
@@ -25,17 +28,19 @@ const App = () => {
   };
 
   return (
-    <div className={theme}>
-      <Header />
-      <main className='todo'>
-        <InputField addTodos={addTodos} />
-        <ul>
-          {todos.map((todo) => (
-            <li>{todo.name}</li>
-          ))}
-        </ul>
-      </main>
-    </div>
+    <ThemeContext.Provider value={theme}>
+      <div className={theme}>
+        <Header />
+        <main className='todo'>
+          <InputField addTodos={addTodos} />
+          <ul>
+            {todos.map((todo) => (
+              <li>{todo.name}</li>
+            ))}
+          </ul>
+        </main>
+      </div>
+    </ThemeContext.Provider>
   );
 };
 
@@ -52,3 +57,4 @@ const App = () => {
 //react icons/ai or /md => search i doc
 
 export default App;
+export { ThemeContext };
