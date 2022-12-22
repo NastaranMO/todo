@@ -4,8 +4,10 @@
   align-items: center;
   border-bottom: 1px solid var(--border-color);
   color: var(--text-todo-color);
+  cursor: pointer;
   span {
     text-align: left;
+    font-weight: 600;
     display: block;
     width: 100%;
     margin-left: 20px;
@@ -23,5 +25,9 @@
 
   img {
     height: 1em;
+    cursor: pointer;
+    @media (min-width: 600px) {
+      display: none;
+    }
   }
 }
