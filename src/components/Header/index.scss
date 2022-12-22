@@ -1,5 +1,3 @@
-@import '../../colors.scss';
-
 @mixin header($mobileImg, $desktopImg) {
   position: fixed;
   z-index: -1;

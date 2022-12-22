@@ -1,22 +1,8 @@
-@import '../../colors.scss';
-.light .form {
-  background-color: $light-grey;
-
-  div.circle {
-    border: 1px solid $deep-light-grayish-blue;
-  }
-}
-
-.dark .form {
-  background-color: $deep-dark-desaturated-blue;
-  div.circle {
-    border: 1px solid $deep-dark-grayish-blue;
-  }
-}
 .form-container {
   width: 100%;
 }
 .form {
+  background-color: var(--bg-color);
   padding-inline: 20px;
   display: flex;
   justify-content: space-between;
@@ -32,13 +18,12 @@
     border: none;
     margin-left: 20px;
     background-color: inherit;
-    // background-color: green;
     @media (min-width: 800px) {
     }
   }
 
   input::placeholder {
-    color: $dark-grayish-blue;
+    color: var(--text-color);
   }
 
   input:focus {
@@ -47,13 +32,11 @@
 
   div {
     width: max-content;
-    // background-color: red;
     .circle {
-      // border: 1px solid $deep-light-grayish-blue;
+      border: 1px solid var(--border-color);
       border-radius: 50px;
       width: 1.2em;
       height: 1.2em;
-      // margin-right: 1em;
     }
   }
 }
