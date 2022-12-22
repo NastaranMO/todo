@@ -30,7 +30,7 @@ const Index = () => {
 
   return (
     <div className={`${theme} main-container`}>
-      {/* <Header /> */}
+      <Header />
       <main className='todo'>
         <Title />
         <InputField addTodos={addTodos} />
