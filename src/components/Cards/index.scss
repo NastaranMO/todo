@@ -1,17 +1,9 @@
-@import '../../colors.scss';
-
-.light .list {
-  background-color: $light-grey;
-}
-.dark .list {
-  background-color: $deep-dark-desaturated-blue;
-}
-
 .list {
   list-style: none;
   border-radius: 5px;
   padding: 0;
   width: 100%;
+  background-color: var(--bg-color);
 
   li {
     display: flex;
@@ -19,5 +11,22 @@
     align-items: center;
     padding: 1em;
     padding-inline: 1.5em;
+  }
+
+  li.footer-item {
+    padding-bottom: 1.2em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    // background-color: red;
+    color: var(--text-color);
+    .items-left {
+    }
+    button.clear {
+      color: inherit;
+      background-color: inherit;
+      border: none;
+      padding: 0;
+    }
   }
 }

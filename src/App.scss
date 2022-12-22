@@ -5,11 +5,30 @@ html * {
   font-family: 'Josefin Sans', sans-serif;
   font-size: 18px;
 }
-
-body.light {
+html.light {
   background-color: $deep-light-grayish-blue;
+  --bg-color: hsl(0, 0%, 98%);
+  --text-color: hsl(236, 9%, 61%);
+  --text-color-deep: hsl(235, 19%, 35%);
+  --border-color: hsl(236, 33%, 92%);
 }
 
-body.dark {
+html.dark {
   background-color: $deep-light-grayish-blue;
+  --bg-color: hsl(235, 24%, 19%);
+  --text-color: hsl(233, 14%, 35%);
 }
+// $light-grey: hsl(0, 0%, 98%);
+// $deep-light-gray: hsl(0, 0%, 98%);
+// $deep-light-grayish-blue: hsl(236, 33%, 92%);
+// $light-grayish-blue: hsl(233, 11%, 84%);
+// $dark-grayish-blue: hsl(236, 9%, 61%);
+// $deep-dark-grayish-blue: hsl(235, 19%, 35%);
+
+// $deep-dark-blue: hsl(235, 21%, 11%);
+// $deep-dark-desaturated-blue: hsl(235, 24%, 19%);
+// $light-grayish-blue: hsl(234, 39%, 85%);
+// $light-grayish-blue-hover: hsl(236, 33%, 92%);
+// $deep-grayish-blue: hsl(234, 11%, 52%);
+// $deep-dark-grayish-blue: hsl(233, 14%, 35%);
+// $deep-dark-grayish-blue: hsl(237, 14%, 26%);

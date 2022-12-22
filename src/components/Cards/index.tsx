@@ -18,7 +18,10 @@ const Index = ({ todos }: Props) => {
       {todos.map((todo) => (
         <Card key={todo.id} todo={todo} />
       ))}
-      <li>df</li>
+      <li className='footer-item'>
+        <span className='items-left'>d</span>
+        <button className='clear'>Clear Completed</button>
+      </li>
     </ul>
   );
 };

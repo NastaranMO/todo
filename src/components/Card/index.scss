@@ -1,13 +1,9 @@
-@import '../../colors.scss';
-
-.light .item {
-  color: $deep-dark-grayish-blue;
-}
 .item {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid $deep-light-grayish-blue;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-color-deep);
   span {
     text-align: left;
     // background-color: yellow;
@@ -20,7 +16,7 @@
     width: max-content;
     // background-color: green;
     .circle {
-      border: 1px solid $deep-light-grayish-blue;
+      border: 1px solid var(--border-color);
       border-radius: 50px;
       width: 1.2em;
       height: 1.2em;
