@@ -1,0 +1,29 @@
+@import '../../colors.scss';
+.title {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  margin-block: 1.5em;
+  //   background-color: yellow;
+  h1 {
+    font-size: 25px;
+    font-family: 'Josefin Sans';
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: $light-grey;
+    @media (min-width: 600px) {
+      font-size: 40px;
+    }
+  }
+
+  img {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    @media (min-width: 600px) {
+      width: 35px;
+      height: 35px;
+    }
+  }
+}

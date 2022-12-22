@@ -1,7 +1,7 @@
 @import '../../colors.scss';
 
 .light .list {
-  background-color: white;
+  background-color: $light-grey;
 }
 .dark .list {
   background-color: $deep-dark-desaturated-blue;
@@ -12,4 +12,12 @@
   border-radius: 5px;
   padding: 0;
   width: 100%;
+
+  li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+    padding-inline: 1.5em;
+  }
 }

@@ -1,6 +1,6 @@
 @import '../../colors.scss';
 .light .form {
-  background-color: white;
+  background-color: $light-grey;
 
   div.circle {
     border: 1px solid $deep-light-grayish-blue;
@@ -13,10 +13,13 @@
     border: 1px solid $deep-dark-grayish-blue;
   }
 }
-
-.form {
+.form-container {
   width: 100%;
+}
+.form {
+  padding-inline: 20px;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   border-radius: 5px;
   height: 3em;
@@ -25,9 +28,11 @@
   }
 
   input {
-    max-width: 90%;
+    width: 100%;
     border: none;
+    margin-left: 20px;
     background-color: inherit;
+    // background-color: green;
     @media (min-width: 800px) {
     }
   }
@@ -42,14 +47,13 @@
 
   div {
     width: max-content;
-    margin-left: 0.7em;
-    // background-color: green;
+    // background-color: red;
     .circle {
       // border: 1px solid $deep-light-grayish-blue;
       border-radius: 50px;
       width: 1.2em;
       height: 1.2em;
-      margin-right: 1em;
+      // margin-right: 1em;
     }
   }
 }

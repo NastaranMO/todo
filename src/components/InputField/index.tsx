@@ -20,16 +20,19 @@ const Index = ({ addTodos }: Props) => {
   };
 
   return (
-    <form className='form' onSubmit={submitHandler}>
-      <div>
-        <div className='circle'></div>
-      </div>
-      <input
-        value={todo}
-        onChange={(e) => setTodo(e.target.value)}
-        placeholder='Create a new todo...'
-      />
-    </form>
+    <div className='form-container'>
+      {' '}
+      <form className='form' onSubmit={submitHandler}>
+        <div>
+          <div className='circle'></div>
+        </div>
+        <input
+          value={todo}
+          onChange={(e) => setTodo(e.target.value)}
+          placeholder='Create a new todo...'
+        />
+      </form>
+    </div>
   );
 };
 

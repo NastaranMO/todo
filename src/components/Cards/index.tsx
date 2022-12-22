@@ -18,6 +18,7 @@ const Index = ({ todos }: Props) => {
       {todos.map((todo) => (
         <Card key={todo.id} todo={todo} />
       ))}
+      <li>df</li>
     </ul>
   );
 };

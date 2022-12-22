@@ -1,69 +1,69 @@
-@import '../../colors.scss';
+// @import '../../colors.scss';
 
-@mixin header($mobileImg, $desktopImg) {
-  width: 100vw;
-  height: 200px;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-image: url($mobileImg);
-  @media (min-width: 375px) {
-    height: 300px;
-    background-image: url($desktopImg);
-  }
-}
+// @mixin header($mobileImg, $desktopImg) {
+//   width: 100vw;
+//   height: 200px;
+//   background-position: center center;
+//   background-repeat: no-repeat;
+//   background-size: cover;
+//   background-image: url($mobileImg);
+//   @media (min-width: 375px) {
+//     height: 300px;
+//     background-image: url($desktopImg);
+//   }
+// }
 
-.light {
-  .headerImg {
-    @include header(
-      '../../images/bg-mobile-light.jpg',
-      '../../images/bg-desktop-light.jpg'
-    );
-  }
-}
+// .light {
+//   .headerImg {
+//     @include header(
+//       '../../images/bg-mobile-light.jpg',
+//       '../../images/bg-desktop-light.jpg'
+//     );
+//   }
+// }
 
-.dark {
-  .headerImg {
-    @include header(
-      '../../images/bg-mobile-dark.jpg',
-      '../../images/bg-desktop-dark.jpg'
-    );
-  }
-}
+// .dark {
+//   .headerImg {
+//     @include header(
+//       '../../images/bg-mobile-dark.jpg',
+//       '../../images/bg-desktop-dark.jpg'
+//     );
+//   }
+// }
 
-.header__container {
-  position: absolute;
-  top: 20px;
-  width: 90vw;
-  margin-inline: 5vw;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: $light-grey;
-  @media (min-width: 800px) {
-    width: 70vw;
-    margin-inline: 15vw;
-  }
-  @media (min-width: 1400px) {
-    width: 50vw;
-    margin-inline: 25vw;
-  }
+// .header__container {
+//   position: absolute;
+//   top: 20px;
+//   width: 90vw;
+//   margin-inline: 5vw;
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+//   color: $light-grey;
+//   @media (min-width: 800px) {
+//     width: 70vw;
+//     margin-inline: 15vw;
+//   }
+//   @media (min-width: 1400px) {
+//     width: 50vw;
+//     margin-inline: 25vw;
+//   }
 
-  h1 {
-    font-size: 25px;
-    font-family: 'Josefin Sans';
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    @media (min-width: 600px) {
-      font-size: 40px;
-    }
-  }
+//   h1 {
+//     font-size: 25px;
+//     font-family: 'Josefin Sans';
+//     letter-spacing: 0.3em;
+//     text-transform: uppercase;
+//     @media (min-width: 600px) {
+//       font-size: 40px;
+//     }
+//   }
 
-  img {
-    width: 25px;
-    cursor: pointer;
-    @media (min-width: 600px) {
-      width: 35px;
-    }
-  }
-}
+//   img {
+//     width: 25px;
+//     cursor: pointer;
+//     @media (min-width: 600px) {
+//       width: 35px;
+//     }
+//   }
+// }

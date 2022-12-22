@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
 import './index.scss';
 import Header from '../Header';
+import Title from '../Title';
 import { ThemeContext } from '../../App';
 import InputField from '../InputField';
 import Cards from '../Cards';
@@ -28,9 +29,10 @@ const Index = () => {
   };
 
   return (
-    <div className={theme}>
-      <Header />
+    <div className={`${theme} main-container`}>
+      {/* <Header /> */}
       <main className='todo'>
+        <Title />
         <InputField addTodos={addTodos} />
         <Cards todos={todos} />
       </main>

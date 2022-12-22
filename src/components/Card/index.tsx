@@ -1,4 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import './index.scss';
+import { ThemeContext } from '../../App';
+import cross from '../../images/icon-cross.svg';
 interface Todo {
   id: string;
   name: string;
@@ -10,7 +13,17 @@ type Props = {
 };
 
 const Index = ({ todo }: Props) => {
-  return <li className='item'>{todo.name}</li>;
+  const theme = useContext(ThemeContext);
+
+  return (
+    <li className='item'>
+      <div>
+        <div className='circle'></div>
+      </div>
+      <span> {todo.name}</span>
+      <img src={cross} alt='' />
+    </li>
+  );
 };
 
 export default Index;

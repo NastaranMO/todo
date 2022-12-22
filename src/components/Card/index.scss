@@ -1,0 +1,33 @@
+@import '../../colors.scss';
+
+.light .item {
+  color: $deep-dark-grayish-blue;
+}
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid $deep-light-grayish-blue;
+  span {
+    text-align: left;
+    // background-color: yellow;
+    display: block;
+    width: 100%;
+    margin-left: 20px;
+  }
+
+  div {
+    width: max-content;
+    // background-color: green;
+    .circle {
+      border: 1px solid $deep-light-grayish-blue;
+      border-radius: 50px;
+      width: 1.2em;
+      height: 1.2em;
+    }
+  }
+
+  img {
+    height: 1em;
+  }
+}
