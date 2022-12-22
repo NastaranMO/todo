@@ -6,6 +6,7 @@ const ThemeContext = createContext('');
 
 const App = () => {
   const [theme, setTheme] = useState('light');
+  document.body.classList.add(theme);
 
   return (
     <ThemeContext.Provider value={theme}>

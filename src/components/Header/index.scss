@@ -1,32 +1,34 @@
-// @import '../../colors.scss';
+@import '../../colors.scss';
 
-// @mixin header($mobileImg, $desktopImg) {
-//   width: 100vw;
-//   height: 200px;
-//   background-position: center center;
-//   background-repeat: no-repeat;
-//   background-size: cover;
-//   background-image: url($mobileImg);
-//   @media (min-width: 375px) {
-//     height: 300px;
-//     background-image: url($desktopImg);
-//   }
-// }
+@mixin header($mobileImg, $desktopImg) {
+  position: fixed;
+  z-index: -1;
+  width: 100vw;
+  height: 200px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url($mobileImg);
+  @media (min-width: 375px) {
+    height: 300px;
+    background-image: url($desktopImg);
+  }
+}
 
-// .light {
-//   .headerImg {
-//     @include header(
-//       '../../images/bg-mobile-light.jpg',
-//       '../../images/bg-desktop-light.jpg'
-//     );
-//   }
-// }
+.light {
+  .headerImg {
+    @include header(
+      '../../images/bg-mobile-light.jpg',
+      '../../images/bg-desktop-light.jpg'
+    );
+  }
+}
 
-// .dark {
-//   .headerImg {
-//     @include header(
-//       '../../images/bg-mobile-dark.jpg',
-//       '../../images/bg-desktop-dark.jpg'
-//     );
-//   }
-// }
+.dark {
+  .headerImg {
+    @include header(
+      '../../images/bg-mobile-dark.jpg',
+      '../../images/bg-desktop-dark.jpg'
+    );
+  }
+}
