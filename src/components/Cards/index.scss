@@ -4,7 +4,6 @@
   padding: 0;
   width: 100%;
   background-color: var(--bg-color);
-
   li {
     display: flex;
     justify-content: space-between;
@@ -38,7 +37,7 @@
           font-weight: 700;
           cursor: pointer;
           &:hover {
-            color: blue;
+            color: rgb(0, 119, 255);
           }
         }
       }
@@ -57,5 +56,33 @@
         color: var(--text-todo-color);
       }
     }
+  }
+}
+.actions-mobile {
+  border-radius: 5px;
+  width: 100%;
+  background-color: var(--bg-color);
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  font-size: 0.9em;
+  color: var(--text-color-footer);
+
+  button {
+    background-color: inherit;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font-size: inherit;
+    font-weight: 700;
+    padding: 1em;
+    cursor: pointer;
+    &:hover {
+      color: rgb(0, 119, 255);
+    }
+  }
+
+  @media (min-width: 600px) {
+    display: none;
   }
 }

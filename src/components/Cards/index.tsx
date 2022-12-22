@@ -14,20 +14,27 @@ type Props = {
 
 const Index = ({ todos }: Props) => {
   return (
-    <ul className='list'>
-      {todos.map((todo) => (
-        <Card key={todo.id} todo={todo} />
-      ))}
-      <li className='footer-item'>
-        <span className='items-left'>5 items left</span>
-        <div className='actions'>
-          <button>All</button>
-          <button>Active</button>
-          <button>Completed</button>
-        </div>
-        <button className='clear'>Clear Completed</button>
-      </li>
-    </ul>
+    <>
+      <ul className='list'>
+        {todos.map((todo) => (
+          <Card key={todo.id} todo={todo} />
+        ))}
+        <li className='footer-item'>
+          <span className='items-left'>5 items left</span>
+          <div className='actions'>
+            <button>All</button>
+            <button>Active</button>
+            <button>Completed</button>
+          </div>
+          <button className='clear'>Clear Completed</button>
+        </li>
+      </ul>
+      <div className='actions-mobile'>
+        <button>All</button>
+        <button>Active</button>
+        <button>Completed</button>
+      </div>
+    </>
   );
 };
 
