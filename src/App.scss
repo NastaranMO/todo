@@ -7,17 +7,26 @@ html * {
 }
 html.light {
   background-color: $deep-light-grayish-blue;
+  --text-todo-color: hsl(235, 19%, 35%);
   --bg-color: hsl(0, 0%, 98%);
-  --text-color: hsl(236, 9%, 61%);
-  --text-color-deep: hsl(235, 19%, 35%);
   --border-color: hsl(236, 33%, 92%);
+  --text-color-footer: hsl(236, 9%, 61%);
+  --text-color-input: hsl(235, 19%, 35%);
+  --title-color: hsl(0, 0%, 98%);
+
+  --text-color: hsl(236, 9%, 61%);
 }
 
 html.dark {
   background-color: $deep-light-grayish-blue;
+  --text-todo-color: hsl(234, 39%, 85%);
   --bg-color: hsl(235, 24%, 19%);
-  --text-color: hsl(233, 14%, 35%);
   --border-color: hsl(237, 14%, 26%);
+  --text-color-footer: hsl(234, 11%, 52%);
+  --text-color-input: hsl(234, 39%, 85%);
+  --title-color: hsl(0, 0%, 98%);
+
+  --text-color: hsl(234, 39%, 85%);
 }
 // $light-grey: hsl(0, 0%, 98%);
 // $deep-light-gray: hsl(0, 0%, 98%);

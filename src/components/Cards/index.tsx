@@ -19,7 +19,12 @@ const Index = ({ todos }: Props) => {
         <Card key={todo.id} todo={todo} />
       ))}
       <li className='footer-item'>
-        <span className='items-left'>d</span>
+        <span className='items-left'>5 items left</span>
+        <div className='actions'>
+          <button>All</button>
+          <button>Active</button>
+          <button>Completed</button>
+        </div>
         <button className='clear'>Clear Completed</button>
       </li>
     </ul>
