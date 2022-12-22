@@ -21,6 +21,7 @@ const createTodo = (todo: string): Todo => ({
 
 const Index = () => {
   const theme = useContext(ThemeContext);
+  console.log('here', theme);
   const [todos, setTodos] = useState<Todo[]>([]);
 
   const addTodos = (todo: string): void => {

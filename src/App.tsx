@@ -2,16 +2,20 @@ import React, { useState, createContext } from 'react';
 import './App.scss';
 import BaseLayout from './components/BaseLayout';
 
-const ThemeContext = createContext('');
+type Theme = {
+  theme: string;
+  setTheme: React.Dispatch<React.SetStateAction<string>>;
+};
+
+const ThemeContext = createContext<Theme>({ theme: '', setTheme: () => {} });
 
 const App = () => {
   const [theme, setTheme] = useState('light');
   // const [theme, setTheme] = useState('dark');
-  // document.body.classList.add(theme);
   document.documentElement.classList.add(theme);
 
   return (
-    <ThemeContext.Provider value={theme}>
+    <ThemeContext.Provider value={{ theme, setTheme }}>
       <BaseLayout />
     </ThemeContext.Provider>
   );
