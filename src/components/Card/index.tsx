@@ -10,18 +10,25 @@ interface Todo {
 
 type Props = {
   todo: Todo;
+  removeTodo: (todo: Todo) => void;
 };
 
-const Index = ({ todo }: Props) => {
-  const theme = useContext(ThemeContext);
-
+const Index = ({ todo, removeTodo }: Props) => {
+  console.log(removeTodo.toString());
   return (
     <li className='item'>
       <div>
         <div className='circle'></div>
       </div>
       <span> {todo.name}</span>
-      <img src={cross} alt='delete-todo' />
+      <img
+        src={cross}
+        alt='delete-todo'
+        onClick={(e) => {
+          e.stopPropagation();
+          removeTodo(todo);
+        }}
+      />
     </li>
   );
 };

@@ -28,13 +28,18 @@ const Index = () => {
     setTodos((prev) => [...prev, newTodo]);
   };
 
+  const update = (todo: Todo) => {
+    const updatedTodos = todos.filter((td) => td.id !== todo.id);
+    setTodos(updatedTodos);
+  };
+
   return (
     <div className={`${theme} main-container`}>
       <Header />
       <main className='todo'>
         <Title />
         <InputField addTodos={addTodos} />
-        <Cards todos={todos} />
+        <Cards todos={todos} update={update} />
       </main>
     </div>
   );
