@@ -21,7 +21,7 @@ const Index = ({ todo }: Props) => {
         <div className='circle'></div>
       </div>
       <span> {todo.name}</span>
-      <img src={cross} alt='' />
+      <img src={cross} alt='delete-todo' />
     </li>
   );
 };
