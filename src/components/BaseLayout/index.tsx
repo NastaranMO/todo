@@ -28,8 +28,15 @@ const Index = () => {
     setTodos((prev) => [...prev, newTodo]);
   };
 
-  const update = (todo: Todo) => {
+  const remove = (todo: Todo) => {
     const updatedTodos = todos.filter((td) => td.id !== todo.id);
+    setTodos(updatedTodos);
+  };
+
+  const update = (todo: Todo) => {
+    const updatedTodos = todos.map((td) =>
+      td.id === todo.id ? { ...td, isDone: !todo.isDone } : td
+    );
     setTodos(updatedTodos);
   };
 
@@ -39,7 +46,7 @@ const Index = () => {
       <main className='todo'>
         <Title />
         <InputField addTodos={addTodos} />
-        <Cards todos={todos} update={update} />
+        <Cards todos={todos} remove={remove} update={update} />
       </main>
     </div>
   );

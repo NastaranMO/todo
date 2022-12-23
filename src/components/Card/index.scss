@@ -13,7 +13,7 @@
     margin-left: 20px;
   }
 
-  div {
+  .circle-container {
     width: max-content;
     .circle {
       border: 1px solid var(--border-color);
@@ -27,13 +27,31 @@
         border: 1px solid transparent;
       }
     }
+    .circle-active {
+      border: 1px solid var(--border-color);
+      border-radius: 50px;
+      width: 1.2em;
+      height: 1.2em;
+      background-image: linear-gradient(
+        hsl(192, 100%, 67%),
+        hsl(280, 87%, 65%)
+      );
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .img-div {
+        background: url('../../images/icon-check.svg') center no-repeat;
+        width: 0.7em;
+        height: 0.7em;
+      }
+    }
   }
 
   img {
     height: 1em;
     cursor: pointer;
     @media (min-width: 600px) {
-      display: none;
+      // display: none;
     }
   }
 }

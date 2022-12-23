@@ -10,10 +10,11 @@ interface Todo {
 
 type Props = {
   todos: Todo[];
+  remove: (todo: Todo) => void;
   update: (todo: Todo) => void;
 };
 
-const Index = ({ todos, update }: Props) => {
+const Index = ({ todos, remove, update }: Props) => {
   const [filteredTodods, setFilteredTodods] = useState<Todo[]>(todos);
 
   useEffect(() => {
@@ -30,10 +31,17 @@ const Index = ({ todos, update }: Props) => {
     <>
       <ul className='list'>
         {filteredTodods.map((todo) => (
-          <Card key={todo.id} todo={todo} removeTodo={update} />
+          <Card
+            key={todo.id}
+            todo={todo}
+            removeTodo={remove}
+            updateTodos={update}
+          />
         ))}
         <li className='footer-item'>
-          <span className='items-left'>5 items left</span>
+          <span className='items-left'>
+            {filteredTodods.filter((td) => !td.isDone)?.length || 0} items left
+          </span>
           <div className='actions'>
             <button onClick={showAllTodosHandler}>All</button>
             <button onClick={showActiveTodosHandler}>Active</button>
