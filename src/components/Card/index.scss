@@ -47,11 +47,15 @@
     }
   }
 
-  img {
+  img.remove {
     height: 1em;
     cursor: pointer;
     @media (min-width: 600px) {
-      // display: none;
+      display: none;
     }
+  }
+
+  img.remove--active {
+    display: inline;
   }
 }

@@ -16,8 +16,14 @@ type Props = {
 };
 
 const Index = ({ todo, removeTodo, updateTodos }: Props) => {
+  const [isHovering, setIsHovering] = useState(false);
+
   return (
-    <li className='item'>
+    <li
+      className='item'
+      onMouseOver={() => setIsHovering(true)}
+      onMouseOut={() => setIsHovering(false)}
+    >
       <div
         className='circle-container'
         onClick={() => {
@@ -30,6 +36,7 @@ const Index = ({ todo, removeTodo, updateTodos }: Props) => {
       </div>
       <span> {todo.name}</span>
       <img
+        className={isHovering ? 'remove remove--active' : 'remove'}
         src={cross}
         alt='delete-todo'
         onClick={(e) => {
