@@ -12,9 +12,10 @@ type Props = {
   todos: Todo[];
   remove: (todo: Todo) => void;
   update: (todo: Todo) => void;
+  clearCompletedTodos: () => void;
 };
 
-const Index = ({ todos, remove, update }: Props) => {
+const Index = ({ todos, remove, update, clearCompletedTodos }: Props) => {
   const [filteredTodods, setFilteredTodods] = useState<Todo[]>(todos);
 
   useEffect(() => {
@@ -47,7 +48,9 @@ const Index = ({ todos, remove, update }: Props) => {
             <button onClick={showActiveTodosHandler}>Active</button>
             <button onClick={showCompletedTodosHandler}>Completed</button>
           </div>
-          <button className='clear'>Clear Completed</button>
+          <button className='clear' onClick={clearCompletedTodos}>
+            Clear Completed
+          </button>
         </li>
       </ul>
       <div className='actions-mobile'>

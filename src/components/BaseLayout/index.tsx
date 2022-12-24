@@ -40,13 +40,20 @@ const Index = () => {
     setTodos(updatedTodos);
   };
 
+  const clearCompletedTodos = () => setTodos(todos.filter((td) => !td.isDone));
+
   return (
     <div className={`${theme} main-container`}>
       <Header />
       <main className='todo'>
         <Title />
         <InputField addTodos={addTodos} />
-        <Cards todos={todos} remove={remove} update={update} />
+        <Cards
+          todos={todos}
+          remove={remove}
+          update={update}
+          clearCompletedTodos={clearCompletedTodos}
+        />
       </main>
     </div>
   );
