@@ -7,10 +7,15 @@
   cursor: pointer;
   span {
     text-align: left;
-    font-weight: 600;
+    font-weight: 500;
     display: block;
     width: 100%;
     margin-left: 20px;
+  }
+
+  span.strikethrough {
+    text-decoration: line-through;
+    color: var(--text-color);
   }
 
   .circle-container {

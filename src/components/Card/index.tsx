@@ -24,17 +24,12 @@ const Index = ({ todo, removeTodo, updateTodos }: Props) => {
       onMouseOver={() => setIsHovering(true)}
       onMouseOut={() => setIsHovering(false)}
     >
-      <div
-        className='circle-container'
-        onClick={() => {
-          updateTodos(todo);
-        }}
-      >
+      <div className='circle-container' onClick={() => updateTodos(todo)}>
         <div className={todo.isDone ? 'circle-active' : 'circle'}>
           <div className='img-div'></div>
         </div>
       </div>
-      <span> {todo.name}</span>
+      <span className={todo.isDone ? 'strikethrough' : ''}> {todo.name}</span>
       <img
         className={isHovering ? 'remove remove--active' : 'remove'}
         src={cross}
