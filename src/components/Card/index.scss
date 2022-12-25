@@ -4,7 +4,7 @@
   align-items: center;
   border-bottom: 1px solid var(--border-color);
   color: var(--text-todo-color);
-  cursor: pointer;
+  cursor: move;
   span {
     text-align: left;
     font-weight: 500;
@@ -19,6 +19,7 @@
   }
 
   .circle-container {
+    cursor: pointer;
     width: max-content;
     .circle {
       border: 1px solid var(--border-color);

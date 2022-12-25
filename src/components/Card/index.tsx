@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useRef, useState } from 'react';
 import './index.scss';
 import { ThemeContext } from '../../App';
 import cross from '../../images/icon-cross.svg';
@@ -11,15 +11,33 @@ interface Todo {
 
 type Props = {
   todo: Todo;
+  index: number;
   removeTodo: (todo: Todo) => void;
   updateTodos: (todo: Todo) => void;
 };
 
-const Index = ({ todo, removeTodo, updateTodos }: Props) => {
+const Index = ({ todo, removeTodo, updateTodos, index }: Props) => {
   const [isHovering, setIsHovering] = useState(false);
+  const dragId = useRef<any>(null);
+  const dragOverId = useRef<any>(null);
 
+  const dragStartHandler = (
+    e: React.DragEvent<HTMLLIElement>,
+    index: number
+  ) => {
+    console.log('drag starts:', index);
+  };
+  const dragEnterHandler = (
+    e: React.DragEvent<HTMLLIElement>,
+    index: number
+  ) => {
+    console.log('drag entered:', index);
+  };
   return (
     <li
+      draggable
+      onDragStart={(e) => dragStartHandler(e, index)}
+      onDragEnter={(e) => dragEnterHandler(e, index)}
       className='item'
       onMouseOver={() => setIsHovering(true)}
       onMouseOut={() => setIsHovering(false)}

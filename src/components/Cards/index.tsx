@@ -31,9 +31,10 @@ const Index = ({ todos, remove, update, clearCompletedTodos }: Props) => {
   return (
     <>
       <ul className='list'>
-        {filteredTodods.map((todo) => (
+        {filteredTodods.map((todo, index) => (
           <Card
             key={todo.id}
+            index={index}
             todo={todo}
             removeTodo={remove}
             updateTodos={update}
