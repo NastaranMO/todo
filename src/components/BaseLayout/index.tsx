@@ -40,6 +40,15 @@ const Index = () => {
     setTodos(updatedTodos);
   };
 
+  const handelDrag = (prevId: number, currId: number) => {
+    console.log(prevId, currId);
+    let _todos = [...todos];
+    const dragedItemContent = _todos.splice(prevId, 1)[0];
+    _todos.splice(currId, 0, dragedItemContent);
+    setTodos(_todos);
+    console.log(_todos, todos);
+  };
+
   const clearCompletedTodos = () => setTodos(todos.filter((td) => !td.isDone));
 
   return (
@@ -50,9 +59,11 @@ const Index = () => {
         <InputField addTodos={addTodos} />
         <Cards
           todos={todos}
+          setTodos={setTodos}
           remove={remove}
           update={update}
           clearCompletedTodos={clearCompletedTodos}
+          handelDrag={handelDrag}
         />
       </main>
     </div>

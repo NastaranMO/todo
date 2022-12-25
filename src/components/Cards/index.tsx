@@ -13,11 +13,21 @@ type Props = {
   remove: (todo: Todo) => void;
   update: (todo: Todo) => void;
   clearCompletedTodos: () => void;
+  handelDrag: (a: number, b: number) => void;
+  setTodos: React.Dispatch<React.SetStateAction<Todo[]>>;
 };
 
-const Index = ({ todos, remove, update, clearCompletedTodos }: Props) => {
+const Index = ({
+  todos,
+  remove,
+  update,
+  clearCompletedTodos,
+  handelDrag,
+  setTodos,
+}: Props) => {
   const [filteredTodods, setFilteredTodods] = useState<Todo[]>(todos);
-
+  const dragItem = React.useRef<any>(null);
+  const dragOverItem = React.useRef<any>(null);
   useEffect(() => {
     setFilteredTodods(todos);
   }, [todos]);
@@ -28,17 +38,77 @@ const Index = ({ todos, remove, update, clearCompletedTodos }: Props) => {
   const showCompletedTodosHandler = () =>
     setFilteredTodods(todos.filter((todo) => todo.isDone));
 
+  const dragStartHandler = (
+    e: React.DragEvent<HTMLLIElement>,
+    index: number
+  ) => {
+    // console.log('drag starts:', index);
+    dragItem.current = index;
+  };
+
+  const dragEnterHandler = (
+    e: React.DragEvent<HTMLLIElement>,
+    index: number
+  ) => {
+    // console.log('drag entered:', index);
+    dragOverItem.current = index;
+  };
+
+  const handelDrag1 = () => {
+    // console.log(prevId, currId);
+    let _todos = [...todos];
+    const dragedItemContent = _todos.splice(dragItem.current, 1)[0];
+    _todos.splice(dragOverItem.current, 0, dragedItemContent);
+    setTodos(_todos);
+    console.log(_todos);
+  };
+
   return (
     <>
       <ul className='list'>
         {filteredTodods.map((todo, index) => (
-          <Card
-            key={todo.id}
-            index={index}
-            todo={todo}
-            removeTodo={remove}
-            updateTodos={update}
-          />
+          // <Card
+          //   key={index}
+          //   index={index}
+          //   todo={todo}
+          //   todos={todos}
+          //   removeTodo={remove}
+          //   updateTodos={update}
+          //   handelDrag={handelDrag}
+          //   setTodos={setTodos}
+          // />
+          <li
+            draggable
+            onDragStart={(e) => dragStartHandler(e, index)}
+            onDragEnter={(e) => dragEnterHandler(e, index)}
+            onDragEnd={() => {
+              console.log(dragOverItem.current);
+
+              handelDrag1();
+            }}
+            className='item'
+            // onMouseOver={() => setIsHovering(true)}
+            // onMouseOut={() => setIsHovering(false)}
+          >
+            <div className='circle-container'>
+              <div className={todo.isDone ? 'circle-active' : 'circle'}>
+                <div className='img-div'></div>
+              </div>
+            </div>
+            <span className={todo.isDone ? 'strikethrough' : ''}>
+              {' '}
+              {todo.name}
+            </span>
+            <img
+              // className={isHovering ? 'remove remove--active' : 'remove'}
+              // src={cross}
+              alt='delete-todo'
+              onClick={(e) => {
+                e.stopPropagation();
+                // removeTodo(todo);
+              }}
+            />
+          </li>
         ))}
         <li className='footer-item'>
           <span className='items-left'>

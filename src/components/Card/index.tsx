@@ -14,30 +14,58 @@ type Props = {
   index: number;
   removeTodo: (todo: Todo) => void;
   updateTodos: (todo: Todo) => void;
+  handelDrag: (a: number, b: number) => void;
+  setTodos: React.Dispatch<React.SetStateAction<Todo[]>>;
+  todos: Todo[];
 };
 
-const Index = ({ todo, removeTodo, updateTodos, index }: Props) => {
+const Index = ({
+  todo,
+  removeTodo,
+  updateTodos,
+  index,
+  handelDrag,
+  todos,
+  setTodos,
+}: Props) => {
   const [isHovering, setIsHovering] = useState(false);
-  const dragId = useRef<any>(null);
-  const dragOverId = useRef<any>(null);
+  const dragItem = useRef<any>(null);
+  const dragOverItem = useRef<any>(null);
 
   const dragStartHandler = (
     e: React.DragEvent<HTMLLIElement>,
     index: number
   ) => {
-    console.log('drag starts:', index);
+    // console.log('drag starts:', index);
+    dragItem.current = index;
   };
+
   const dragEnterHandler = (
     e: React.DragEvent<HTMLLIElement>,
     index: number
   ) => {
-    console.log('drag entered:', index);
+    // console.log('drag entered:', index);
+    dragOverItem.current = index;
+  };
+
+  const handelDrag1 = () => {
+    // console.log(prevId, currId);
+    let _todos = [...todos];
+    const dragedItemContent = _todos.splice(dragItem.current, 1)[0];
+    _todos.splice(dragOverItem.current, 0, dragedItemContent);
+    setTodos(_todos);
+    console.log(_todos);
   };
   return (
     <li
       draggable
       onDragStart={(e) => dragStartHandler(e, index)}
       onDragEnter={(e) => dragEnterHandler(e, index)}
+      onDragEnd={() => {
+        console.log(dragOverItem.current);
+
+        handelDrag1();
+      }}
       className='item'
       onMouseOver={() => setIsHovering(true)}
       onMouseOut={() => setIsHovering(false)}
