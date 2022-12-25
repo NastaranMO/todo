@@ -16,7 +16,7 @@ type Props = {
   update: (todo: Todo) => void;
   clearCompletedTodos: () => void;
   handelDrag: (a: number, b: number) => void;
-  setTodos: React.Dispatch<React.SetStateAction<Todo[]>>;
+  // setTodos: React.Dispatch<React.SetStateAction<Todo[]>>;
 };
 
 const Index = ({
@@ -25,10 +25,10 @@ const Index = ({
   update,
   clearCompletedTodos,
   handelDrag,
-  setTodos,
 }: Props) => {
   const [filteredTodods, setFilteredTodods] = useState<Todo[]>(todos);
   const [isHovering, setIsHovering] = useState(false);
+
   const dragItem = React.useRef<any>(null);
   const dragOverItem = React.useRef<any>(null);
 
@@ -42,44 +42,20 @@ const Index = ({
   const showCompletedTodosHandler = () =>
     setFilteredTodods(todos.filter((todo) => todo.isDone));
 
-  const dragStartHandler = (
-    e: React.DragEvent<HTMLLIElement>,
-    index: number
-  ) => {
-    // console.log('drag starts:', index);
-    dragItem.current = index;
-  };
-
-  const dragEnterHandler = (
-    e: React.DragEvent<HTMLLIElement>,
-    index: number
-  ) => {
-    // console.log('drag entered:', index);
-    dragOverItem.current = index;
-  };
-
-  const handelDrag1 = () => {
-    let _todos = [...todos];
-    const dragedItemContent = _todos.splice(dragItem.current, 1)[0];
-    _todos.splice(dragOverItem.current, 0, dragedItemContent);
-    setTodos(_todos);
-    console.log(_todos);
-  };
-
   return (
     <>
       <ul className='list'>
         {filteredTodods.map((todo, index) => (
           <li
             draggable
-            onDragStart={(e) => dragStartHandler(e, index)}
-            onDragEnter={(e) => dragEnterHandler(e, index)}
+            onDragStart={() => (dragItem.current = index)}
+            onDragEnter={() => (dragOverItem.current = index)}
             onDragEnd={() => {
-              console.log(dragOverItem.current);
-
-              handelDrag1();
+              // console.log(dragOverItem.current);
+              handelDrag(dragItem.current, dragOverItem.current);
             }}
             className='item'
+            key={todo.id}
             onMouseOver={() => setIsHovering(true)}
             onMouseOut={() => setIsHovering(false)}
           >

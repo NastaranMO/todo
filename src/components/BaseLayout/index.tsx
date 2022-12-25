@@ -46,7 +46,6 @@ const Index = () => {
     const dragedItemContent = _todos.splice(prevId, 1)[0];
     _todos.splice(currId, 0, dragedItemContent);
     setTodos(_todos);
-    console.log(_todos, todos);
   };
 
   const clearCompletedTodos = () => setTodos(todos.filter((td) => !td.isDone));
@@ -59,7 +58,7 @@ const Index = () => {
         <InputField addTodos={addTodos} />
         <Cards
           todos={todos}
-          setTodos={setTodos}
+          // setTodos={setTodos}
           remove={remove}
           update={update}
           clearCompletedTodos={clearCompletedTodos}

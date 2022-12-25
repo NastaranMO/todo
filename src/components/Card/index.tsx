@@ -30,32 +30,14 @@ const Index = ({
   const dragItem = useRef<any>(null);
   const dragOverItem = useRef<any>(null);
 
-  const dragStartHandler = (
-    e: React.DragEvent<HTMLLIElement>,
-    index: number
-  ) => {
-    // console.log('drag starts:', index);
-    dragItem.current = index;
-  };
-
-  const dragEnterHandler = (
-    e: React.DragEvent<HTMLLIElement>,
-    index: number
-  ) => {
-    // console.log('drag entered:', index);
-    dragOverItem.current = index;
-  };
-
-  const handelDrag1 = () => {};
   return (
     <li
-      draggable={draggable}
-      onDragStart={(e) => dragStartHandler(e, index)}
-      onDragEnter={(e) => dragEnterHandler(e, index)}
+      draggable
+      onDragStart={() => (dragItem.current = index)}
+      onDragEnter={() => (dragOverItem.current = index)}
       onDragEnd={() => {
-        console.log(dragOverItem.current);
-
-        handelDrag1();
+        // console.log(dragOverItem.current);
+        handelDrag(dragItem.current, dragOverItem.current);
       }}
       className='item'
       onMouseOver={() => setIsHovering(true)}
