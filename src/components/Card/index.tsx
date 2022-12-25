@@ -15,8 +15,7 @@ type Props = {
   removeTodo: (todo: Todo) => void;
   updateTodos: (todo: Todo) => void;
   handelDrag: (a: number, b: number) => void;
-  setTodos: React.Dispatch<React.SetStateAction<Todo[]>>;
-  todos: Todo[];
+  draggable: boolean;
 };
 
 const Index = ({
@@ -25,8 +24,7 @@ const Index = ({
   updateTodos,
   index,
   handelDrag,
-  todos,
-  setTodos,
+  draggable,
 }: Props) => {
   const [isHovering, setIsHovering] = useState(false);
   const dragItem = useRef<any>(null);
@@ -48,17 +46,10 @@ const Index = ({
     dragOverItem.current = index;
   };
 
-  const handelDrag1 = () => {
-    // console.log(prevId, currId);
-    let _todos = [...todos];
-    const dragedItemContent = _todos.splice(dragItem.current, 1)[0];
-    _todos.splice(dragOverItem.current, 0, dragedItemContent);
-    setTodos(_todos);
-    console.log(_todos);
-  };
+  const handelDrag1 = () => {};
   return (
     <li
-      draggable
+      draggable={draggable}
       onDragStart={(e) => dragStartHandler(e, index)}
       onDragEnter={(e) => dragEnterHandler(e, index)}
       onDragEnd={() => {

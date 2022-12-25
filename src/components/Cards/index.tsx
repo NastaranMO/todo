@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import './index.scss';
+import '../Card/index.scss';
 import Card from '../Card';
+import cross from '../../images/icon-cross.svg';
 
 interface Todo {
   id: string;
@@ -26,8 +28,10 @@ const Index = ({
   setTodos,
 }: Props) => {
   const [filteredTodods, setFilteredTodods] = useState<Todo[]>(todos);
+  const [isHovering, setIsHovering] = useState(false);
   const dragItem = React.useRef<any>(null);
   const dragOverItem = React.useRef<any>(null);
+
   useEffect(() => {
     setFilteredTodods(todos);
   }, [todos]);
@@ -55,7 +59,6 @@ const Index = ({
   };
 
   const handelDrag1 = () => {
-    // console.log(prevId, currId);
     let _todos = [...todos];
     const dragedItemContent = _todos.splice(dragItem.current, 1)[0];
     _todos.splice(dragOverItem.current, 0, dragedItemContent);
@@ -67,16 +70,6 @@ const Index = ({
     <>
       <ul className='list'>
         {filteredTodods.map((todo, index) => (
-          // <Card
-          //   key={index}
-          //   index={index}
-          //   todo={todo}
-          //   todos={todos}
-          //   removeTodo={remove}
-          //   updateTodos={update}
-          //   handelDrag={handelDrag}
-          //   setTodos={setTodos}
-          // />
           <li
             draggable
             onDragStart={(e) => dragStartHandler(e, index)}
@@ -87,10 +80,10 @@ const Index = ({
               handelDrag1();
             }}
             className='item'
-            // onMouseOver={() => setIsHovering(true)}
-            // onMouseOut={() => setIsHovering(false)}
+            onMouseOver={() => setIsHovering(true)}
+            onMouseOut={() => setIsHovering(false)}
           >
-            <div className='circle-container'>
+            <div className='circle-container' onClick={() => update(todo)}>
               <div className={todo.isDone ? 'circle-active' : 'circle'}>
                 <div className='img-div'></div>
               </div>
@@ -100,12 +93,12 @@ const Index = ({
               {todo.name}
             </span>
             <img
-              // className={isHovering ? 'remove remove--active' : 'remove'}
-              // src={cross}
+              className={isHovering ? 'remove remove--active' : 'remove'}
+              src={cross}
               alt='delete-todo'
               onClick={(e) => {
                 e.stopPropagation();
-                // removeTodo(todo);
+                remove(todo);
               }}
             />
           </li>
