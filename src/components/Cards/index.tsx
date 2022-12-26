@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './index.scss';
 import '../Card/index.scss';
-import Card from '../Card';
 import cross from '../../images/icon-cross.svg';
 
 interface Todo {

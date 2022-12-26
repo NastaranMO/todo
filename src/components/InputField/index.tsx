@@ -1,10 +1,5 @@
 import React, { useState } from 'react';
 import './index.scss';
-interface Todo {
-  id: number;
-  name: string;
-  isDone: boolean;
-}
 
 type Props = {
   addTodos: (todo: string) => void;
